@@ -282,8 +282,8 @@ class SimpleClassificationPipeline(ClassifierMixin, BasePipeline):
             default_dataset_properties.update(dataset_properties)
 
         steps.extend([
-            ["data_preprocessing",
-                DataPreprocessor(dataset_properties=default_dataset_properties)],
+            # ["data_preprocessing",
+            #     DataPreprocessor(dataset_properties=default_dataset_properties)],
             ["balancing",
                 Balancing()],
             ["feature_preprocessor",

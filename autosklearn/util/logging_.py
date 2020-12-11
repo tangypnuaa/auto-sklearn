@@ -29,12 +29,14 @@ def setup_logger(
 
     if filename is None:
         filename = logging_config['handlers']['file_handler']['filename']
+    filename = filename.replace(':', '')
     logging_config['handlers']['file_handler']['filename'] = os.path.join(
         output_dir, filename
     )
 
     if distributedlog_filename is None:
         distributedlog_filename = logging_config['handlers']['distributed_logfile']['filename']
+    distributedlog_filename = distributedlog_filename.replace(':', '')
     logging_config['handlers']['distributed_logfile']['filename'] = os.path.join(
             output_dir, distributedlog_filename
         )

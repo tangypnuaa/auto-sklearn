@@ -204,10 +204,10 @@ class Backend(object):
         if not isinstance(start_time, float):
             raise ValueError("Start time must be a float, but is %s." % type(start_time))
 
-        if os.path.exists(filepath):
-            raise ValueError(
-                "{filepath} already exist. Different seeds should be provided for different jobs."
-            )
+        # if os.path.exists(filepath):
+        #     raise ValueError(
+        #         "{filepath} already exist. Different seeds should be provided for different jobs."
+        #     )
 
         with tempfile.NamedTemporaryFile('w', dir=os.path.dirname(filepath), delete=False) as fh:
             fh.write(str(start_time))
